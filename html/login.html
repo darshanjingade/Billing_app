@@ -21,9 +21,11 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" ng-model="ls.password" required>
             </div>
+            {{ls.data}}
             <button type="submit" class="btn-login">Login</button>
         </form>
     </div>
 </body>
-<script src="../js/login_controller.jss"></script>
+<script src="../js/login_controller.js"></script>
+<script src="../js/loginService.js"></script>
 </html>
