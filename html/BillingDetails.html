@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Billing Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/BillingDetails.css">
+</head>
+<body ng-app="BillingApp">
+    <div ng-controller="BillingController as vm">
+        <h1>Billing Details</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.items">
+                    <td>{{ item.product }}</td>
+                    <td>{{ item.price | currency }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price * item.quantity | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Total: {{ vm.calculateTotal() | currency }}</p>
+    </div>
+
+    <script src="../js/BillingDetails.js"></script>
+</body>
+</html>
