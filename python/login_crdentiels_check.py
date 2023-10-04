@@ -1,6 +1,7 @@
 import openpyxl
 import os
 import json
+from flask import Flask, jsonify
 
 #to find current directory
 current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -24,8 +25,19 @@ print(data)
 # Close the workbook
 workbook.close()
 
+app = Flask(__name__)
+
+@app.route('/api/data', methods=['GET'])
+
 def loginData():
-    return json.dumps(data)
+    # Replace this with your data retrieval logic
+    return jsonify(data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
 
 
 

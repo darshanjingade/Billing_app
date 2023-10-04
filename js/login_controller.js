@@ -1,10 +1,11 @@
-app.controller('LoginController', function () {
+app = angular.module('BillingApp',[])
+app.controller('LoginController',['loginService', function (loginService) {
     var ls = this;
     ls.username = '';
     ls.password = '';
     ls.data = {}
     ls.loginData = function(param){
-        getLoginCridentiels(param)
+        loginService.getLoginCridentiels(param)
         .then(function(response){
             ls.data = response.data;
         })
@@ -19,4 +20,4 @@ app.controller('LoginController', function () {
             alert('Login failed. Please check your credentials.');
         }
     };
-});
+}]);
