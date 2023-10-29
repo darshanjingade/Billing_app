@@ -1,0 +1,15 @@
+{
+  "name": "appserver",
+  "version": "1.0.0",
+  "description": "apiconnection",
+  "main": "app.js",
+  "scripts": {
+    "test": "test.app"
+  },
+  "author": "darshanj",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}

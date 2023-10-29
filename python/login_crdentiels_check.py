@@ -27,9 +27,10 @@ workbook.close()
 
 app = Flask(__name__)
 
-@app.route('/api/data', methods=['GET'])
+@app.route('http://localhost:3000/api/data', methods=['GET'])
 
 def loginData():
+    import pdb;pdb.set_trace()
     # Replace this with your data retrieval logic
     return jsonify(data)
 
